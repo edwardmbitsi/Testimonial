@@ -1,7 +1,4 @@
 <?php
-    // getting all values from the HTML form
-    if(isset($_POST['submit']))
-    {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $rating = $_POST['rating'];
@@ -14,27 +11,19 @@
     $password = "Ln*-QLoyf5H808";
     $dbname = "exceptio_testimony";
 
-    // creating a connection
-    $con = mysqli_connect($host, $username, $password, $dbname);
-
-    // to ensure that the connection is made
-    if (!$con)
-    {
-        die("Connection failed!" . mysqli_connect_error());
-    }
-
-    // using sql to create a data entry query
-    $sql = "INSERT INTO contactform_entries (id, name, description, rating) VALUES ('0', '$name', '$description', '$rating')";
-  
-    // send query to the database to add values and confirm if successful
-    $rs = mysqli_query($con, $sql);
-    if($rs)
-    {
-        echo "Testimonial added!";
-    }
-  
-    // close connection
-    mysqli_close($con);
-
+    // Database connection
+	$conn = new mysqli('localhost','root','','test');
+	if($conn->connect_error){
+		echo "$conn->connect_error";
+		die("Connection Failed : ". $conn->connect_error);
+	} else {
+		$stmt = $conn->prepare("insert into registration(name, description, rating) values(?, ?, ?)");
+		$stmt->bind_param("sssssi", $name, $description, $rating);
+		$execval = $stmt->execute();
+		echo $execval;
+		echo "Registration successfully...";
+		$stmt->close();
+		$conn->close();
+	}
 ?>
 
