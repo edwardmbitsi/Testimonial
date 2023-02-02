@@ -12,7 +12,7 @@
     $dbname = "exceptio_testimony";
 
     // Database connection
-	$conn = new mysqli('localhost','root','','test');
+	$conn = new mysqli('localhost','root','','exceptio_testimony');
 	if($conn->connect_error){
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
