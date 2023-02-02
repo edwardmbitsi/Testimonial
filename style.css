@@ -23,6 +23,11 @@ body {
 #app{
   margin: auto;
   max-width: 600px;
+  
+}
+
+
+
 
 .rating { 
   border: none;
