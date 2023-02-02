@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form id="app">
+<h3>Leave your testimonial</h3> 
+ <br>
+ <h5>*required</h5>
+<label for="name">Full Name*</label>  
+<input class="formelement" type="text" name="title" Placeholder="What is your full name?" required/><br>
+<label for="description">Testimonial*</label>  
+<textarea class="formelement" rows="5" cols="20" name="description" Placeholder="What do you think about us?" required></textarea><br>
+<br><br>
+<label for="rating">Star rating</label>  
+<div class="rating-list">
+  <input type="radio" name="ratings[1]" id="Overall Rating_5" value="5" class="radio rating-radio rating-radio--5">
+  <label for="Overall Rating_5" title="1 star rating" class="star-rating star-rating--5"></label>
+  <input type="radio" name="ratings[1]" id="Overall Rating_4" value="4" class="radio rating-radio rating-radio--4">
+  <label for="Overall Rating_4" title="2 star rating" class="star-rating star-rating--4"></label>
+  <input type="radio" name="ratings[1]" id="Overall Rating_3" value="3" class="radio rating-radio rating-radio--3">
+  <label for="Overall Rating_3" title="3 star rating" class="star-rating star-rating--3"></label>
+  <input type="radio" name="ratings[1]" id="Overall Rating_2" value="2" class="radio rating-radio rating-radio--2">
+  <label for="Overall Rating_2" title="4 star rating" class="star-rating star-rating--2"></label>
+  <input type="radio" name="ratings[1]" id="Overall Rating_1" value="1" class="radio rating-radio rating-radio--1">
+  <label for="Overall Rating_1" title="5 star rating" class="star-rating star-rating--1"></label>
+</div>
+<br>
+<h4 style="text-decoration: none;">Would you like to include Star rating?</h4>  
+</form>
+<script src="app.js">
+  
+</script>
+</html>
