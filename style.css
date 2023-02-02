@@ -1,0 +1,108 @@
+HTML CSS JSResult Skip Results Iframe
+li{display: inline-block;color: #ddd;font-size:30px;}
+.highlight, .selected {color:#F4B30A;text-shadow: 0 0 1px #F4B30A;}
+.formelement {
+  box-sizing: border-box;
+  padding: 8px !important;
+  margin-bottom: 15px !important;
+  width: 100%;
+  border:2px solid #ddd !important;
+  outline: none;
+  border-radius: 4px !important;
+}
+#app{
+  margin: auto;
+  max-width: 600px;
+  
+}
+
+
+Resources1× 0.5× 0.25×Rerun
+.rating-list {
+	clear: both;
+	float: :left;
+	margin: 3rem;
+}
+.rating-list ~ .form-list {
+	clear: both;
+}
+.rating-field {
+	margin-bottom: .5em;
+}
+.star-rating {
+  display: block;
+  height: 23px;
+  float: left;
+  color: transparent;
+  background: transparent url("https://i.imgur.com/BhJbWEJ.png") 0 100% no-repeat;
+	position: relative;
+  width: 25px;
+  &:before {
+  	z-index: 10;
+  	position: absolute;
+  	width: 0;
+  	height: 23px;
+  	content: "";
+  	background: transparent url("https://i.imgur.com/BhJbWEJ.png") 0 0 no-repeat;
+  	top: 0; left: 0;
+  }
+  &:hover {
+  	&:before {
+  		width: 100%;
+  	}
+  }
+}
+input[type="radio"].rating-radio {
+	position: absolute;
+  margin: 1em 0 0 .9em;
+  font-size: .5em;
+  z-index: -1;
+  visibility: hidden;
+}
+
+// 1 star rating
+
+.rating-radio--1:checked {
+  & ~ .star-rating:before {
+		width: 100%;
+	}
+}
+
+// 2 star rating
+
+.rating-radio--2:checked {
+  & ~ .star-rating:before {
+		width: 100%;
+	}
+}
+
+// 3 star rating
+
+.rating-radio--3:checked {
+  & ~ .star-rating:before {
+		width: 100%;
+	}
+}
+
+// 4 star rating
+
+.rating-radio--4:checked {
+  & ~ .star-rating:before {
+		width: 100%;
+	}
+}
+
+// 5 star rating
+
+.rating-radio--5:checked {
+  & ~ .star-rating:before {
+    width: 100%;
+  }
+}
+
+.rating-list .star-rating:hover,
+.rating-list .star-rating:hover ~ .star-rating {
+  &:before {
+		width: 100%;
+	}
+}
