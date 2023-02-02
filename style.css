@@ -62,7 +62,7 @@ body {
 #rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
 
 #submit {  
-  width: 15%;  
+  width: 25%;  
   height: 40px;  
   line-height: 40px;  
   background-color: #3498db;  
