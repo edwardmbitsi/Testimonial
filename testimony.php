@@ -12,7 +12,7 @@
     $host = "localhost";
     $username = "exceptio";
     $password = "Ln*-QLoyf5H808";
-    $dbname = "exceptio_wp524";
+    $dbname = "exceptio_testimony";
 
     // creating a connection
     $con = mysqli_connect($host, $username, $password, $dbname);
