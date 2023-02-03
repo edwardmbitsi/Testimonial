@@ -7,8 +7,8 @@
 
     // database details
     $host = "localhost";
-    $username = "exceptio";
-    $password = "Ln*-QLoyf5H808";
+    $username = "";
+    $password = "";
     $dbname = "exceptio_testimony";
 
     // Database connection
