@@ -1,29 +1,43 @@
-<?php
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $rating = $_POST['rating'];
-        
-    }
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
 
-    // database details
-    $host = "localhost";
-    $username = "";
-    $password = "";
-    $dbname = "exceptio_testimony";
+<script>
+  // Initialize Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyCXw_HdlQorGAEuZvrwsZxs6iQEEob7SA0",
+  authDomain: "form-25eb2.firebaseapp.com",
+  databaseURL: "https://form-25eb2-default-rtdb.firebaseio.com",
+  projectId: "form-25eb2",
+  storageBucket: "form-25eb2.appspot.com",
+  messagingSenderId: "238060808489",
+  appId: "1:238060808489:web:ff12e3c49ca742bb87ef38"
+  };
+  firebase.initializeApp(firebaseConfig);
+  
+  // Get a reference to the database
+  var database = firebase.database();
 
-    // Database connection
-	$conn = new mysqli('localhost','root','','exceptio_testimony');
-	if($conn->connect_error){
-		echo "$conn->connect_error";
-		die("Connection Failed : ". $conn->connect_error);
-	} else {
-		$stmt = $conn->prepare("insert into registration(name, description, rating) values(?, ?, ?)");
-		$stmt->bind_param("sssssi", $name, $description, $rating);
-		$execval = $stmt->execute();
-		echo $execval;
-		echo "Registration successfully...";
-		$stmt->close();
-		$conn->close();
-	}
-?>
-
+  // Get references to the form elements
+  var form = document.getElementById("app");
+  var nameInput = document.getElementById("title");
+  var emailInput = document.getElementById("rating");
+  
+  // Listen for form submit
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Get the form data
+    var title = nameInput.value;
+    var rating = emailInput.value;
+    
+    // Write the data to the Firebase database
+    database.ref("users").push({
+      rating: rating,
+      title: title
+    });
+    
+    // Clear the form
+    nameInput.value = "";
+    emailInput.value = "";
+  });
+</script>
