@@ -19,7 +19,7 @@
 
   // Get references to the form elements
   var form = document.getElementById("app");
-  var nameInput = document.getElementById("title");
+  var nameInput = document.getElementById("description");
   var emailInput = document.getElementById("rating");
   
   // Listen for form submit
@@ -27,17 +27,17 @@
     event.preventDefault();
     
     // Get the form data
-    var title = nameInput.value;
+    var description = nameInput.value;
     var rating = emailInput.value;
     
     // Write the data to the Firebase database
     database.ref("users").push({
       rating: rating,
-      title: title
+      description: description
     });
     
     // Clear the form
-    nameInput.value = "";
-    emailInput.value = "";
+    ratingInput.value = "";
+    descriptionInput.value = "";
   });
 </script>
