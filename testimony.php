@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
+class testimony{
         $name = $_POST['name'];
         $description = $_POST['description'];
         $rating = $_POST['rating'];
@@ -27,5 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$stmt->close();
 		$conn->close();
 	}
+}
 ?>
 
