@@ -9,12 +9,12 @@ class testimony{
 
     // database details
     $host = "localhost";
-    $username = "exceptio";
+    $username = "root";
     $password = "";
     $dbname = "exceptio_wp524";
 
     // Database connection
-	$conn = new mysqli('localhost','exceptio','','exceptio_wp524');
+	$conn = new mysqli('localhost','root','','wp524');
 	if($conn->connect_error){
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
